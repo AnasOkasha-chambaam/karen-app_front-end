@@ -1,0 +1,272 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  /* color: unset; */
+}
+
+ul {
+  list-style: none;
+}
+
+:root {
+  --white-clr: #f6f0ea;
+  --secondary-clr: #e6d7b8;
+  --primary-clr: #654321;
+  --tri-clr: #624c3c;
+  --text-clr: #493725;
+  --zip-code-background: #bdac8e;
+}
+
+.header {
+  /* background-color: var(--white-clr); */
+  background-color: transparent;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.header .logo-container {
+  padding: 15px;
+  background: var(--secondary-clr);
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+.zip-codes-container {
+  /* background-color: var(--secondary-clr); */
+  padding: 25px;
+  width: 100%;
+  min-height: 100vh;
+  animation: up-animation 0.5s ease forwards;
+}
+
+@keyframes up-animation {
+  from {
+    transform: translateY(150px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.zip-codes {
+  margin: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  background-color: hsla(30, 99%, 30%, 0.3);
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  height: 100vh;
+  padding: 25px;
+}
+
+.zip-codes .zip {
+  background-color: var(--secondary-clr);
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bold;
+  color: var(--text-clr);
+  transition: background 0.2s ease, background 0.2s ease;
+  cursor: pointer;
+  position: relative;
+  /* font-size: 21px; */
+  font-size: 35px;
+}
+
+.zip-codes .zip:hover {
+  background-color: var(--text-clr);
+  color: var(--secondary-clr);
+}
+
+.zip-codes .zip::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.5);
+  width: 110%;
+  height: 110%;
+  border: 2px solid var(--text-clr);
+  border-radius: 3px;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.zip-codes .zip:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.9;
+}
+
+.zip-code-info-container {
+  padding: 25px;
+}
+
+.zip-code-info .code-container {
+  background-color: var(--zip-code-background);
+  width: fit-content;
+  padding: 30px 70px;
+  border-top-left-radius: 45px;
+  border-top-right-radius: 45px;
+}
+
+.zip-code-info .code-container h1 {
+  font-size: 45px;
+  padding: 25px 85px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: var(--secondary-clr);
+  border-radius: 15px;
+  position: relative;
+  display: block;
+}
+.zip-code-info .code-container h1::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: none;
+  border: 3px solid #58382f;
+  /* background-color: red; */
+  width: 101%;
+  height: 104%;
+  border-radius: 15px;
+}
+
+.zip-code-info ul {
+  background-color: var(--secondary-clr);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 25px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.zip-code-info ul li {
+  width: 245px;
+  padding: 10px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.zip-code-info ul li:hover {
+  background-color: var(--tri-clr);
+}
+
+.zip-code-info ul li:hover p:not(:last-child) {
+  color: var(--white-clr) !important;
+}
+
+.zip-code-info img {
+  display: block;
+  margin: auto;
+}
+
+.restaurant-info p:nth-child(1) {
+  color: var(--text-clr);
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.restaurant-info p:nth-child(2) {
+  font-weight: bold;
+}
+
+.restaurant-info p:not(:nth-child(1)) {
+  border-radius: 10px;
+  color: var(--tri-clr);
+  /* line-height: 1.5; */
+}
+
+.restaurant-info p:last-child,
+.meal p:last-child {
+  background-color: var(--tri-clr);
+  color: var(--secondary-clr);
+  border-radius: 10px;
+  padding: 3px 10px;
+  display: block;
+  width: fit-content;
+  margin-top: 10px;
+}
+
+.single-restaurant-info {
+  margin-top: 45px;
+  padding: 45px;
+}
+
+.restaurant-header-container {
+  display: flex;
+  background-color: var(--secondary-clr);
+  padding: 15px;
+  justify-content: space-between;
+  position: relative;
+  color: var(--text-clr);
+}
+
+.restaurant-header-container .restaurant-header-img {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  transform: translateY(-60%);
+  background: var(--secondary-clr);
+  border-radius: 42px;
+  padding: 10px;
+}
+
+.restaurant-header-container .restaurant-info p:first-child {
+  font-size: 25px;
+}
+
+.restaurant-meals {
+  background-color: var(--white-clr);
+  color: var(--text-clr);
+}
+
+.restaurant-meals h1 {
+  text-align: center;
+  padding: 15px;
+  font-size: 45px;
+}
+
+.category-info .name-description {
+  background-color: var(--text-clr);
+  color: var(--white-clr);
+  margin: 10px 0;
+  padding: 15px;
+  transform: scale(1.05);
+}
+
+.meal {
+  padding: 15px;
+  border: 1px solid var(--text-clr);
+  margin: 15px;
+  transition: 0.2s ease;
+}
+
+.meal:hover {
+  background-color: var(--primary-clr);
+  color: var(--white-clr);
+}
+
+.meal p:first-child {
+  font-weight: bold;
+  padding: 15px;
+}
+
+.meal p:not(:first-child) {
+  line-height: 1.5;
+}
