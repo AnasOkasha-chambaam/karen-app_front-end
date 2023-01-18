@@ -4,8 +4,19 @@ import data from "../json/restaurants.json";
 import CategoryMeals from "./CategoryMeals";
 
 function SingleRestaurant() {
-  let { zipcode, i } = useParams();
-  let restaurant = data[zipcode][i];
+  let subdomain;
+  const host = window.location.host,
+    hostArr = host.split(".").slice(0, host.includes("restobau") ? -1 : -2);
+
+  let restaurant;
+  if (hostArr.length > 0) {
+    subdomain = hostArr[0];
+    console.log(subdomain);
+    restaurant = data.restaurants[subdomain];
+  } else {
+    let { zipcode, i } = useParams();
+    restaurant = data[zipcode][i];
+  }
   return (
     <div className="single-restaurant-info">
       <div className="restaurant-header-container">

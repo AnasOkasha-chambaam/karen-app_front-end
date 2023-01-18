@@ -1,7 +1,7 @@
 import React from "react";
 import data from "../json/restaurants.json";
 import { Link } from "react-router-dom";
-const zipCodes = Object.keys(data);
+const zipCodes = Object.keys(data.zipcodes);
 function Showcase() {
   return (
     <section className="zip-codes-container">

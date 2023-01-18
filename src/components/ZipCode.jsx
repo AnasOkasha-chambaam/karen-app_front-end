@@ -1,13 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import data from "../json/restaurants.json";
-import { Link } from "react-router-dom";
+// import { Link } from "reactrrr-router-dom";
 import codeBackground from "../imgs/zip-code-background.png";
 
 function ZipCode() {
   let { zipcode } = useParams();
-  console.log(zipcode);
-  console.log(data[zipcode]);
   return (
     <section className="zip-code-info-container">
       <div className="zip-code-info">
@@ -21,17 +19,13 @@ function ZipCode() {
           </h1>
         </div>
         <ul className="zip-code-restaurants">
-          {data[zipcode].map((restaurant) => {
+          {data.zipcodes[zipcode].map((restaurant) => {
             return (
-              <Link
-                to={
-                  "/restaurant/" +
-                  zipcode +
-                  "/" +
-                  restaurant.i +
-                  "/" +
-                  restaurant.name
-                }
+              <a
+                href={`http://${restaurant.name
+                  .replace(/[^a-zA-Z ]/g, "")
+                  .split(" ")
+                  .join("")}.restobau.at`}
                 key={restaurant.index + "_" + restaurant.i}
               >
                 <li className="restaurant-card">
@@ -60,7 +54,7 @@ function ZipCode() {
                     })}
                   </div>
                 </li>
-              </Link>
+              </a>
             );
           })}
         </ul>
