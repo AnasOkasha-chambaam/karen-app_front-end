@@ -11,7 +11,7 @@ function App() {
   let subdomain;
   const host = window.location.host,
     hostArr = host.split(".").slice(0, host.includes("restobau") ? -1 : -2);
-  if (hostArr.length > 0) {
+  if (hostArr.length > 0 && hostArr[0] !== "www" && hostArr[0] !== "restobau") {
     subdomain = hostArr[0];
     console.log(subdomain);
     return (
@@ -21,7 +21,9 @@ function App() {
         }}
       >
         <header className="header">
-          <Logo />
+          <a href="http://restobau.at">
+            <Logo />
+          </a>
         </header>
         <Routes>
           <Route path="/" element={<SingleRestaurant />} />

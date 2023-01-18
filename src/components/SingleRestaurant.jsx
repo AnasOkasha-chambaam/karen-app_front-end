@@ -9,7 +9,7 @@ function SingleRestaurant() {
     hostArr = host.split(".").slice(0, host.includes("restobau") ? -1 : -2);
 
   let restaurant;
-  if (hostArr.length > 0) {
+  if (hostArr.length > 0 && hostArr[0] !== "www" && hostArr[0] !== "restobau") {
     subdomain = hostArr[0];
     console.log(subdomain);
     restaurant = data.restaurants[subdomain];
