@@ -8,6 +8,13 @@ import ZipCode from "./components/ZipCode";
 import SingleRestaurant from "./components/SingleRestaurant";
 
 function App() {
+  let subdomain;
+  const host = window.location.host,
+    hostArr = host.split(".").slice(0, host.includes("localhost") ? -1 : -2);
+  if (Array.length > 0) {
+    subdomain = hostArr[0];
+  }
+  console.log(subdomain);
   return (
     <div
       style={{ background: `url(${background}) no-repeat center center/cover` }}
