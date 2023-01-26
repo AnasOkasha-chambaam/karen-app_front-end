@@ -31,7 +31,7 @@ function SingleRestaurant() {
           })}
         </div>
         <div className="restaurant-header-img">
-          <img src={restaurant.logo} alt="" height={120} />
+          <img src={restaurant.logo} alt="" />
         </div>
       </div>
       <div className="restaurant-meals">

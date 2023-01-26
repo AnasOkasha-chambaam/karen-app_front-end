@@ -33,6 +33,7 @@ function ZipCode() {
                     <img
                       src={restaurant.logo}
                       alt={restaurant.name + " Logo"}
+                      height={120}
                     />
                   </div>
                   <div className="restaurant-info">
