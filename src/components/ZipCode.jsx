@@ -22,7 +22,7 @@ function ZipCode() {
           {data.zipcodes[zipcode].map((restaurant) => {
             return (
               <a
-                href={`http://${restaurant.name
+                href={`https://${restaurant.name
                   .replace(/[^a-zA-Z ]/g, "")
                   .split(" ")
                   .join("")}.restobau.at`}
