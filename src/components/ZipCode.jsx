@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import data from "../json/restaurants.json";
 // import { Link } from "reactrrr-router-dom";
-import codeBackground from "../imgs/zip-code-background.png";
+import codeBackground from "../imgs/zip-code-background.webp";
 
 function ZipCode() {
   let { zipcode } = useParams();

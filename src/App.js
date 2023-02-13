@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Logo from "./components/Logo";
 import Showcase from "./components/Showcase";
-import background from "./imgs/background.png";
+import background from "./imgs/background.webp";
 import { Routes, Route } from "react-router-dom";
 import ZipCode from "./components/ZipCode";
 
